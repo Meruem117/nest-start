@@ -4,8 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { UpController } from './up/up.controller'
-import { UpService } from './up/up.service'
+import { UpModule } from './up/up.module'
+import { VideoModule } from './video/video.module'
 
 @Module({
   imports: [
@@ -18,10 +18,12 @@ import { UpService } from './up/up.service'
       database: 'bili',
       entities: ['dist/**/*.entity.js'],
       synchronize: true
-    })
+    }),
+    UpModule,
+    VideoModule
   ],
-  controllers: [AppController, UpController],
-  providers: [AppService, UpService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 
 export class AppModule {
