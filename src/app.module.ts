@@ -14,7 +14,7 @@ import { VideoModule } from './video/video.module'
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'niit1234',
+      password: 'abc123',
       database: 'bili',
       entities: ['dist/**/*.entity.js'],
       synchronize: true
