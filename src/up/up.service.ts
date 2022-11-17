@@ -1,8 +1,15 @@
 import { Injectable } from '@nestjs/common'
+import { InjectRepository } from '@nestjs/typeorm'
+import { Repository } from 'typeorm'
+import { Up } from './up'
 
 @Injectable()
 export class UpService {
-  getAll(): string {
-    return 'All ups'
+  constructor(
+    @InjectRepository(Up) private readonly upRepository: Repository<Up>
+  ) { }
+
+  async findAll(): Promise<Up[]> {
+    return this.upRepository.find()
   }
 }
