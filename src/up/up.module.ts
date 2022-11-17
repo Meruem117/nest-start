@@ -17,8 +17,8 @@ import { Up } from './up.entity'
       synchronize: true
     }),
     TypeOrmModule.forFeature([
-      Up
-    ])
+      Up,
+    ]),
   ],
   controllers: [UpController],
   providers: [UpService],

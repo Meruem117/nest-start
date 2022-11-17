@@ -1,8 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
-@Entity('up')
+@Entity()
 export class Up {
-  @PrimaryGeneratedColumn() id: number
-  @Column() mid: string
-  @Column() name: string
+  @PrimaryGeneratedColumn()
+  id: number
+
+  @Column()
+  mid: string
+
+  @Column()
+  name: string
 }
