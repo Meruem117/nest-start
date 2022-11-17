@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UpController } from './up.controller'
 import { UpService } from './up.service'
-import { Up } from './up'
+import { Up } from './up.entity'
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { Up } from './up'
       username: 'root',
       password: 'abc123',
       database: 'bili',
-      entities: ['dist/**/*.entity.js'],
+      entities: [Up],
       synchronize: true
     }),
     TypeOrmModule.forFeature([

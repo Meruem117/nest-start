@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common'
 import { UpService } from './up.service'
-import { Up } from './up'
+import { Up } from './up.entity'
 
 @Controller('up')
 export class UpController {
