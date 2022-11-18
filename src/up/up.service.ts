@@ -10,11 +10,19 @@ export class UpService {
     private readonly upRepository: Repository<Up>
   ) { }
 
-  /**
-   * get all ups
-   * @returns up list
-   */
   findAll(): Promise<Up[]> {
     return this.upRepository.find()
+  }
+
+  findAllName(): Promise<Up[]> {
+    return this.upRepository.find({
+      select: ['name']
+    })
+  }
+
+  findById(id: number): Promise<Up> {
+    return this.upRepository.findOne({
+      where: { id: id }
+    })
   }
 }
