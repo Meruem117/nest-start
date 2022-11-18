@@ -6,19 +6,7 @@ import { Up } from './up.entity'
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'abc123',
-      database: 'bili',
-      entities: [Up],
-      synchronize: true
-    }),
-    TypeOrmModule.forFeature([
-      Up,
-    ]),
+    TypeOrmModule.forFeature([Up]),
   ],
   controllers: [UpController],
   providers: [UpService],

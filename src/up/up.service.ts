@@ -14,7 +14,7 @@ export class UpService {
    * get all ups
    * @returns up list
    */
-  async findAll(): Promise<Up[]> {
+  findAll(): Promise<Up[]> {
     return this.upRepository.find()
   }
 }

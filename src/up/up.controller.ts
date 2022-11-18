@@ -7,7 +7,7 @@ export class UpController {
   constructor(private readonly upService: UpService) { }
 
   @Get('/all')
-  async findAll(): Promise<Up[]> {
-    return await this.upService.findAll()
+  findAll(): Promise<Up[]> {
+    return this.upService.findAll()
   }
 }
