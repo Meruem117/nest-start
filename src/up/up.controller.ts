@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common'
+import { Controller, Get, Param, Query } from '@nestjs/common'
 import { UpService } from './up.service'
 import { Up } from './up.entity'
 
@@ -16,8 +16,18 @@ export class UpController {
     return this.upService.findAllName()
   }
 
+  @Get('/second')
+  findSecond(): Promise<Up[]> {
+    return this.upService.findSecond()
+  }
+
   @Get(':id')
   findById(@Param('id') id: number): Promise<Up> {
     return this.upService.findById(id)
+  }
+
+  @Get()
+  findByName(@Query() query: { name: string }): Promise<Up> {
+    return this.upService.findByName(query.name)
   }
 }
